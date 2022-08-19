@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans&family=Barlow:wght@300&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body{
   font-family: 'Alumni Sans', sans-serif;
   font-size: 20px;
@@ -96,8 +101,63 @@ blockquote{
   padding: 1px 20px;
 }
 .btn-coffee{
-  margin: 2px 35%;
+  display: flex;
+  width: 20%;
+  text-align: center;
+  align-content: center;
+  justify-content: space-around;
+}
+.btn-coffee:hover{
+  cursor: pointer;
 }
 a{
   color: lawngreen;
+}
+
+.btn-social{
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+}
+.btn-social:hover{
+  cursor: pointer;
+}
+.icon{
+  height: 40px;
+  width: 40px;
+  margin: auto;
+}
+.social-options{
+  width: 10%;
+  margin: 1% auto;
+  display: flex;
+  justify-content: space-between;
+}
+.form{
+  border: 1px solid whitesmoke;
+  border-radius: 3px;
+  display: flex;
+  margin: 2% auto;
+  padding: 10px;
+  width: 60%;
+  flex-direction: column;
+}
+
+.input-form{
+  background: hsla(220, 13%, 18%, 0.37);
+  height: 30px;
+  padding: 5px;
+  border: none;
+  font-family: 'Barlow', sans-serif;
+  color: white;
+}
+.text-area{
+  height: 8vmax;
+  resize: none;
+}
+.icon-coffee{
+  height: 24px;
+  width: 24px;
+  margin: 0;
 }

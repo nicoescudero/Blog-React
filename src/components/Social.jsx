@@ -1,17 +1,39 @@
 import '../App.css';
 import {Link} from 'react-router-dom';
 function Home(){
+  function socialMedia(data){
+    if (data === 'linkedin')
+    window.open('https://www.linkedin.com/in/nicolas-escudero/');
+    else
+    window.open('https://github.com/nicoescudero');
+  };
   return (
     <div>
       <nav className='nav'>
-        <Link to='/' className='option'>DEV</Link>
+        <Link to='/' className='option'>BLOG DEV</Link>
         <div className='options'>
-          <Link to='/whoami' className='option'>Whoami</Link>
-          <Link to='/social' className='option'>Social Media</Link>
+          <Link to='/whoami' className='option'>Acerca de mi</Link>
+          <Link to='/social' className='option'>Contactame</Link>
         </div>
       </nav>
       <main className='content'>
-      <p className='text-center'>My Social Media!</p>
+        <div className='social-options'>
+          <button onClick={() => socialMedia('linkedin')} className='btn-social'>
+            <img src="/linkedin.png" alt="linkedin" className='icon'/>
+          </button>
+          <button onClick={() => socialMedia('github')} className='btn-social'>
+            <img src="/github.png" alt="github" className='icon'/>
+          </button>
+        </div>
+        <form method="post" name='contact' data-netlify="true" className='form'>
+          <label htmlFor="name">Nombre</label>
+          <input type="text" name='name' className='input-form' maxLength={30}/>
+          <label htmlFor="email">Email</label>
+          <input type="text" name='email' className='input-form' maxLength={40}/>
+          <label htmlFor="message">Mensaje</label>
+          <textarea name="message" className='input-form text-area' cols="30" rows="10" maxLength={300}></textarea>
+          <button type="submit" className='button-post'>Enviar</button>
+        </form>
       </main>
     </div>
   );

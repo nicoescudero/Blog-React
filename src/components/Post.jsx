@@ -7,20 +7,22 @@ function Post(){
   const locations = useLocation();
   const title = locations.state.title;
   const body = locations.state.body;
+
   async function coffee(){
     const response = await axios({
       method:'post',
       url:'/create-order'
     });
-    window.location.href = response.data.body.links[1].href;
+    window.open(response.data.body.links[1].href);
   }
+  
   return (
     <div className="App">
        <nav className='nav'>
-        <Link to='/' className='option'>DEV</Link>
+        <Link to='/' className='option'>BLOG DEV</Link>
         <div className='options'>
-          <Link to='/whoami' className='option'>Whoami</Link>
-          <Link to='/social' className='option'>Social Media</Link>
+          <Link to='/whoami' className='option'>Acerca de mi</Link>
+          <Link to='/social' className='option'>Contactame</Link>
         </div>
       </nav>
       <main className='content markdown'>
@@ -29,7 +31,11 @@ function Post(){
         <br/>
         <hr />
         <br/>
-        <button onClick={()=>coffee()} className='button-post btn-coffee'>Give me a coffee</button>
+        <button onClick={()=>coffee()} className='button-post btn-coffee'>
+          <p>Invitame un cafe</p>
+          <img src="/coffee.png" alt="" className='icon-coffee'/>
+          <img src="/paypal.png" alt="" className='icon-coffee'/>
+        </button>
       </main>
     </div>
   );
