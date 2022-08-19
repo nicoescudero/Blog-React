@@ -33,7 +33,10 @@ function Home(){
             <div className='post-list'>
             {
               posts.map(item => {
-              return <Link to={'/'+item._id} key={item._id} state={{title:item.title,body:item.body}} className='button-post'>{item.title}</Link>
+              return <Link to={'/'+item._id} key={item._id} state={{title:item.title,body:item.body, date: item.date}} className='posts'>
+                <img src={`${item.image}`} alt="" className='post-image'/>
+                <p className='title-post'>{item.title}</p>
+                </Link>
               })
             }
           </div>

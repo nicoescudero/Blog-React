@@ -29,7 +29,7 @@ function Home(){
           <label htmlFor="name">Nombre</label>
           <input type="text" name='name' className='input-form' maxLength={30}/>
           <label htmlFor="email">Email</label>
-          <input type="text" name='email' className='input-form' maxLength={40}/>
+          <input type="email" name='email' className='input-form' maxLength={40}/>
           <label htmlFor="message">Mensaje</label>
           <textarea name="message" className='input-form text-area' cols="30" rows="10" maxLength={300}></textarea>
           <button type="submit" className='button-post'>Enviar</button>

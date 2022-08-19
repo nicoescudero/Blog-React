@@ -7,7 +7,7 @@ function Post(){
   const locations = useLocation();
   const title = locations.state.title;
   const body = locations.state.body;
-
+  const date = locations.state.date;
   async function coffee(){
     const response = await axios({
       method:'post',
@@ -26,6 +26,7 @@ function Post(){
         </div>
       </nav>
       <main className='content markdown'>
+        <p>{date}</p>
         <h1 className='title'>{title}</h1>
         <ReactMarkdown children={body} className='markdown'/>
         <br/>

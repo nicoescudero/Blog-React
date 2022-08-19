@@ -51,8 +51,11 @@ body{
 }
 
 .post-list{
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 5px;
+  column-gap: 5px;
+  padding: 5px;
 }
 
 .button-post{
@@ -84,7 +87,7 @@ body{
   margin: 2% auto;
 }
 
-h1,h2,h3,h4{
+h1,h2{
   text-align: center;
 }
 
@@ -160,4 +163,30 @@ a{
   height: 24px;
   width: 24px;
   margin: 0;
+}
+p{
+  margin: 5px;
+}
+li{
+  margin-left: 3%;
+}
+
+.posts{
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+}
+.posts:hover{
+  color: lawngreen;
+  transition: 0.9s;
+}
+.post-image{
+  border-radius: 2px;
+  padding: 3px;
+  object-fit: cover;
+  height: max-content;
+  margin:0;
 }
