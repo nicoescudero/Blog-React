@@ -2,6 +2,8 @@ import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Navbar from './Navbar';
+
 function Home(){
   const [posts,setPosts] = useState(0);
   
@@ -18,13 +20,7 @@ function Home(){
 
   return (
     <div>
-      <nav className='nav'>
-        <Link to='/' className='option'>BLOG DEV</Link>
-        <div className='options'>
-          <Link to='/whoami' className='option'>Acerca de mi</Link>
-          <Link to='/social' className='option'>Contactame</Link>
-        </div>
-      </nav>
+      <Navbar/>
       <main className='content'>
       {
           (posts.length > 0)?

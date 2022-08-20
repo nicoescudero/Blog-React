@@ -186,7 +186,8 @@ li{
 .post-image{
   border-radius: 2px;
   padding: 3px;
+  height: 10%;
   object-fit: cover;
-  height: max-content;
+  height: 15vmax;
   margin:0;
 }

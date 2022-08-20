@@ -1,6 +1,7 @@
 import '../App.css';
 import ReactMarkdown from 'react-markdown'
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import Navbar from './Navbar';
 import axios from 'axios';
 
 function Post(){
@@ -13,18 +14,12 @@ function Post(){
       method:'post',
       url:'/create-order'
     });
-    window.open(response.data.body.links[1].href);
+    window.location.href=response.data.body.links[1].href;
   }
   
   return (
     <div className="App">
-       <nav className='nav'>
-        <Link to='/' className='option'>BLOG DEV</Link>
-        <div className='options'>
-          <Link to='/whoami' className='option'>Acerca de mi</Link>
-          <Link to='/social' className='option'>Contactame</Link>
-        </div>
-      </nav>
+      <Navbar/>
       <main className='content markdown'>
         <p>{date}</p>
         <h1 className='title'>{title}</h1>

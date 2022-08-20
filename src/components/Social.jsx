@@ -1,21 +1,17 @@
 import '../App.css';
-import {Link} from 'react-router-dom';
-function Home(){
+import Navbar from './Navbar';
+
+function Social(){
   function socialMedia(data){
     if (data === 'linkedin')
     window.open('https://www.linkedin.com/in/nicolas-escudero/');
     else
     window.open('https://github.com/nicoescudero');
   };
+  
   return (
     <div>
-      <nav className='nav'>
-        <Link to='/' className='option'>BLOG DEV</Link>
-        <div className='options'>
-          <Link to='/whoami' className='option'>Acerca de mi</Link>
-          <Link to='/social' className='option'>Contactame</Link>
-        </div>
-      </nav>
+      <Navbar/>
       <main className='content'>
         <div className='social-options'>
           <button onClick={() => socialMedia('linkedin')} className='btn-social'>
@@ -39,4 +35,4 @@ function Home(){
   );
 };
 
-export default Home;
+export default Social;

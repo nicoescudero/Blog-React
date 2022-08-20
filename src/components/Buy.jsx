@@ -1,17 +1,17 @@
 import '../App.css';
 import Navbar from './Navbar';
 
-function Whoami(){
+function Buy(){
   return (
     <div>
       <Navbar/>
       <main className='content'>
         <p className='text-center'>
-          Whoami!
+          Muchas gracias! 😃
         </p>
       </main>
     </div>
   );
 };
 
-export default Whoami;
+export default Buy;
