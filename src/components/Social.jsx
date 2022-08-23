@@ -21,7 +21,7 @@ function Social(){
             <img src="/github.png" alt="github" className='icon'/>
           </button>
         </div>
-        <form method="post" name='contact' data-netlify="true" className='form'>
+        <form name='contact' netlify className='form'>
           <label htmlFor="name">Nombre</label>
           <input type="text" name='name' className='input-form' maxLength={30}/>
           <label htmlFor="email">Email</label>
