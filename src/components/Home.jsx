@@ -15,7 +15,7 @@ function Home(){
       method:'get',
       url:'/posts/all',
     });
-    setPosts(response.data.body);
+    setPosts(response.data.body.reverse());
   };
 
   return (

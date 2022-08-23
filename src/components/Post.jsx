@@ -3,6 +3,8 @@ import ReactMarkdown from 'react-markdown'
 import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import axios from 'axios';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atelierLakesideDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 function Post(){
   const locations = useLocation();
@@ -23,7 +25,24 @@ function Post(){
       <main className='content markdown'>
         <p>{date}</p>
         <h1 className='title'>{title}</h1>
-        <ReactMarkdown children={body} className='markdown'/>
+        <ReactMarkdown children={body} className='markdown' 
+          components={{
+          code({node, inline, className, children, ...props}) {
+          const match = /language-(\w+)/.exec(className || '')
+          return !inline && match ? (
+            <SyntaxHighlighter
+              children={String(children).replace(/\n$/, '')}
+              style={atelierLakesideDark}
+              language={match[1]}
+              PreTag="div"
+              {...props}
+            />
+          ) : (
+            <code className={className} {...props}>
+              {children}
+            </code>
+          )}
+        }}/>
         <br/>
         <hr />
         <br/>
