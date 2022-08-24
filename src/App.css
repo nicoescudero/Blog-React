@@ -52,7 +52,7 @@ body{
 
 .post-list{
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, auto);
   row-gap: 5px;
   column-gap: 5px;
   padding: 5px;
@@ -184,6 +184,7 @@ li{
   padding: 3px;
   text-align: center;
   text-decoration: none;
+  width: fit-content;
 }
 .posts:hover{
   color: lawngreen;
