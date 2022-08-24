@@ -14,7 +14,7 @@ function Post(){
   async function coffee(){
     const response = await axios({
       method:'post',
-      url:'/create-order'
+      url:'https://blogapi-production-ba40.up.railway.app/create-order'
     });
     window.location.href=response.data.body.links[1].href;
   }

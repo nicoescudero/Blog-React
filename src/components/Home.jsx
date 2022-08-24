@@ -13,7 +13,7 @@ function Home(){
   async function getPost(){
     const response = await axios({
       method:'get',
-      url:'/posts/all',
+      url:'https://blogapi-production-ba40.up.railway.app/posts/all',
     });
     setPosts(response.data.body.reverse());
   };
@@ -25,7 +25,7 @@ function Home(){
       {
           (posts.length > 0)?
           <div>
-            <p>Last Posts</p>
+            <p>Ultimos Posts</p>
             <div className='post-list'>
             {
               posts.map(item => {
@@ -39,7 +39,7 @@ function Home(){
           </div>
           :
           <div>
-            <p>No post found</p>
+            <p>No hay posts 🙁</p>
           </div>
         }
       </main>
