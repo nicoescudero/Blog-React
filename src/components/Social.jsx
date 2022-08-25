@@ -21,7 +21,7 @@ function Social(){
             <img src="/github.png" alt="github" className='icon'/>
           </button>
         </div>
-        <form name='contact' method='post' netlify netlify-honeypot="bot-field" hidden className='form'>
+        <form name='contact' method='post' data-netlify="true" data-netlify-honeypot="bot-field" hidden className='form'>
           <input type="hidden" name="contact" value="contact"/>
           <label htmlFor="name">Nombre</label>
           <input type="text" name='name' className='input-form' maxLength={30}/>
