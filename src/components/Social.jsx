@@ -9,7 +9,6 @@ function Social(){
   const {register,handleSubmit,formState: { errors }} = useForm();
 
   async function sendMail (data,e){
-    console.log(data)
     const response = await axios.post('https://blogapi-production-ba40.up.railway.app/send-email',{
         name: data.name,
         email: data.email,
